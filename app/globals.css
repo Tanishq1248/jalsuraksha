@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --primary: #0f2942;
+  --primary-foreground: #ffffff;
+  --accent-teal: #0d9488;
+  --safe: #10b981;
+  --warning: #f59e0b;
+  --critical: #ef4444;
+  --border: #e2e8f0;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Leaflet Map Overrides for Government Theme */
+.leaflet-container {
+  font-family: inherit;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  z-index: 10;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 0.75rem !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.15) !important;
+  border: 1px solid #e2e8f0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.leaflet-popup-tip {
+  background: #ffffff !important;
+}
+
+/* Pulse badge animation */
+@keyframes soft-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
